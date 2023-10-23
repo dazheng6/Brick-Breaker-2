@@ -1,2 +1,2 @@
 res://Scenes/paddle.tscn
-res://Scenes/main.tscn
+res://Scripts/paddle.gd
