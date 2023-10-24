@@ -1,11 +1,34 @@
-[gd_scene load_steps=2 format=3 uid="uid://dntwvgr8jfhki"]
+[gd_scene load_steps=4 format=3 uid="uid://dntwvgr8jfhki"]
 
 [ext_resource type="PackedScene" uid="uid://1xkdkgdhagkc" path="res://Scenes/paddle.tscn" id="1_lwlrn"]
+[ext_resource type="PackedScene" uid="uid://c372sd6lqxu8j" path="res://Scenes/ball.tscn" id="2_60h1l"]
+[ext_resource type="PackedScene" uid="uid://c4mkpq13dxiwv" path="res://Scenes/wall.tscn" id="3_mc732"]
 
-[node name="mian" type="Node"]
+[node name="main" type="Node"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
 
 [node name="Paddle" parent="." node_paths=PackedStringArray("camera") instance=ExtResource("1_lwlrn")]
-position = Vector2(0, 289)
+position = Vector2(576, 620)
+collision_layer = 2
 camera = NodePath("../Camera2D")
+
+[node name="Ball" parent="." instance=ExtResource("2_60h1l")]
+position = Vector2(576, 569)
+collision_mask = 14
+
+[node name="Walls" type="Node" parent="."]
+
+[node name="UpperWall" parent="Walls" instance=ExtResource("3_mc732")]
+collision_layer = 4
+
+[node name="RightWall" parent="Walls" instance=ExtResource("3_mc732")]
+position = Vector2(1152, -538)
+rotation = 1.5708
+collision_layer = 4
+
+[node name="Leftwall" parent="Walls" instance=ExtResource("3_mc732")]
+position = Vector2(-38, -554)
+rotation = 1.5708
+collision_layer = 4

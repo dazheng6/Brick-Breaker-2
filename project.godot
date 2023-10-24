@@ -34,6 +34,13 @@ right={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="ball"
+3d_physics/layer_2="paddle"
+3d_physics/layer_3="walls"
+3d_physics/layer_4="brick"
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0, 0, 0, 1)
