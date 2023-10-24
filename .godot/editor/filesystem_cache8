@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1698119487
+::res://::1698173890
 icon.svg::CompressedTexture2D::6739885791941145749::1698091785::1698091789::1::::<><>::
 README.md::TextFile::-1::1698093006::0::1::::<><>::
 ::res://Assets/::1698092154
@@ -13,8 +13,11 @@ Brick-Yellow.png::CompressedTexture2D::5772095262280393697::1692354175::16923541
 icon.svg::CompressedTexture2D::7753658774376271310::1692354175::1692354175::1::::<><>::
 Paddle.png::CompressedTexture2D::5477542658004981000::1692354175::1692354175::1::::<><>::
 VT323-Regular.ttf::FontFile::4453843302194638347::1692354175::1692354175::1::::<><>::
-::res://Scenes/::1698119440
-main.tscn::PackedScene::8112313814127101840::1698092956::0::1::::<><>::uid://1xkdkgdhagkc::::res://Scenes/paddle.tscn
-paddle.tscn::PackedScene::1873003684889591998::1698119440::0::1::::<><>::uid://ckbmlemetbql1::::res://Assets/Paddle.png<>res://Scripts/paddle.gd
-::res://Scripts/::1698119440
-paddle.gd::GDScript::-1::1698119440::0::1::::Paddle<>RigidBody2D<>::
+::res://Scenes/::1698123690
+ball.tscn::PackedScene::6805860786457090963::1698123690::0::1::::<><>::res://Scripts/ball.gd<>uid://c8l7ke1ygg27h::::res://Assets/Ball.png
+main.tscn::PackedScene::8112313814127101840::1698123689::0::1::::<><>::uid://1xkdkgdhagkc::::res://Scenes/paddle.tscn<>uid://c372sd6lqxu8j::::res://Scenes/ball.tscn<>uid://c4mkpq13dxiwv::::res://Scenes/wall.tscn
+paddle.tscn::PackedScene::1873003684889591998::1698123690::0::1::::<><>::uid://ckbmlemetbql1::::res://Assets/Paddle.png<>res://Scripts/paddle.gd
+wall.tscn::PackedScene::6833725204589728649::1698123690::0::1::::<><>::
+::res://Scripts/::1698123675
+ball.gd::GDScript::-1::1698123675::0::1::::Bal<>CharacterBody2D<>::
+paddle.gd::GDScript::-1::1698123130::0::1::::Paddle<>RigidBody2D<>::
