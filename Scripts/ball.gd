@@ -6,6 +6,8 @@ const VELOCTIY_LIMIT = 40
 
 @export var ball_speed = 20
 @export var lifes = 3
+@export var death_zone: DeathZone
+@export var ui: UI
 
 var speed_up_factor = 1.05
 
@@ -14,7 +16,9 @@ var speed_up_factor = 1.05
 var start_position: Vector2
 
 func _ready():
+	ui.set_lifes(lifes)
 	start_position = position
+	death_zone.life_lost.connect(on_life_lost)
 
 func _physics_process(delta):
 	var collision = move_and_collide(velocity * ball_speed * delta)
@@ -28,3 +32,15 @@ func start_ball():
 	randomize()
 	
 	velocity = Vector2(randf_range(-1, 1), randf_range(-1, -1)).normalized() * ball_speed
+
+func on_life_lost():
+	lifes -= 1
+	if lifes == 0:
+		ui.game_over()
+	else:
+		reset_ball()
+		ui.set_lifes(lifes)
+		
+func reset_ball():
+	position = start_position
+	velocity = Vector2.ZERO
