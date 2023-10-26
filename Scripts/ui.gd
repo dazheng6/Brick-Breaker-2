@@ -3,8 +3,9 @@ extends CanvasLayer
 class_name UI
 
 @onready var lifes_label = $MarginContainer/HBoxContainer/LifesLabel
-@onready var game_lost_container = $GameLostContainer/Panel/VBoxContainer/GameLostButton
 
+@onready var game_lost_container = $GameLostContainer/Panel/VBoxContainer/GameLostButton
+	
 func set_lifes(lifes: int):
 	lifes_label.text = "lifes: %d" % lifes
 

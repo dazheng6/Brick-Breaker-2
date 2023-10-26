@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 class_name Bal
 
+signal life_lost
+
 const VELOCTIY_LIMIT = 40
 
 @export var ball_speed = 20
@@ -38,6 +40,7 @@ func on_life_lost():
 	if lifes == 0:
 		ui.game_over()
 	else:
+		life_lost.emit()
 		reset_ball()
 		ui.set_lifes(lifes)
 		
