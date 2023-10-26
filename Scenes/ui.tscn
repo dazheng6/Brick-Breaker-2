@@ -33,7 +33,6 @@ theme_override_fonts/font = ExtResource("1_bdgkw")
 text = "Lifes: 3"
 
 [node name="GameLostContainer" type="CenterContainer" parent="."]
-visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -54,7 +53,7 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="MessageLabel" type="Label" parent="GameLostContainer/Panel/VBoxContainer"]
+[node name="Label" type="Label" parent="GameLostContainer/Panel/VBoxContainer"]
 layout_mode = 2
 text = "YOU HAVE LOST"
 horizontal_alignment = 1
