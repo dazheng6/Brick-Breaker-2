@@ -20,6 +20,8 @@ func _ready():
 
 func _physics_process(delta):
 	linear_velocity = speed * direction
+	position = Vector2(global_position.x, global_position.y)
+	linear_velocity = speed * direction
 
 func _process(delta):
 	var camera_start_x = camera.position.x - camera_rect.size.x / 2
