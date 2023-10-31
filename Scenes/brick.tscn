@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d06ws4g0pu0q0" path="res://Assets/Brick-Blue.png" id="1_ygc8g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j4147"]
-size = Vector2(99, 24)
+size = Vector2(398, 100)
 
 [node name="Brick" type="RigidBody2D"]
 lock_rotation = true
@@ -16,5 +16,4 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_ygc8g")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
 shape = SubResource("RectangleShape2D_j4147")
