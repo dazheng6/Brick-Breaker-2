@@ -26,7 +26,11 @@ func _physics_process(delta):
 	var collision = move_and_collide(velocity * ball_speed * delta)
 	if (!collision):
 		return
-		
+	
+	var collider = collision.get_collider()
+	if collider is Brick:
+		collider.decrease_level()
+	
 	velocity = velocity.bounce(collision.get_normal())
 
 func start_ball():

@@ -27,7 +27,7 @@ func spawn():
 	test_brick.queue_free()
 	
 	var row_width = brick_size.x * COLUMNS + margin.x * (COLUMNS - 1)
-	var spawn_position_x = (row_width  + brick_size.x  + margin.x) / 2 
+	var spawn_position_x = (-row_width  + brick_size.x  + margin.x) / 2 
 	var spawn_position_y = spawn_start.position.y
 	
 	for i in ROWS:
