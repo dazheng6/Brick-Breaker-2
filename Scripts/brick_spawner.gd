@@ -35,7 +35,7 @@ func spawn():
 			var brick = brick_scene.instantiate() as Brick
 			add_child(brick)
 			brick.set_level(ROWS - i)
-			var x = spawn_position_x + j * (margin.x + brick.get_size().x)
+			var x = spawn_position_x + j * (margin.x + brick.get_size().x) + 250
 			var y = spawn_position_y + i * (margin.y + brick.get_size().y)
 			brick.set_position(Vector2(x, y))
 			brick.brick_destroyed.connect(on_brick_destroyed)
