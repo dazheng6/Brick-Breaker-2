@@ -18,28 +18,33 @@ var sprites: Array[Texture2D] = [
 	preload("res://Assets/Brick-Red.png")
 ]
 
+func _ready():
+	# Initialize the brick with a random level
+	set_level(randi() % sprites.size() + 1)
+
 func get_size():
 	return collision_shape_2d.shape.get_rect().size * sprite_2d.scale
-	
+
+# Set the level and update the texture
 func set_level(new_level: int):
-	level = new_level
-	sprite_2d.texture = sprites[new_level - 1]
-	
+	level = new_level  # Ensure the level is within valid range
+	sprite_2d.texture = sprites[level - 1]
+
 func decrease_level():
 	if level > 1:
 		set_level(level - 1)
 	else:
 		fade_out()
-		
+
 func fade_out():
 	collision_shape_2d.disabled = true
 	var tween = get_tree().create_tween()
-	tween.tween_property(sprite_2d, "modulate", Color.TRANSPARENT, .5)
+	tween.tween_property(sprite_2d, "modulate", Color.TRANSPARENT, 0.5)
 	tween.tween_callback(destroy)
-	
+
 func destroy():
 	queue_free()
 	brick_destroyed.emit()
-	
+
 func get_width():
 	return get_size().x
