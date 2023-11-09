@@ -7,3 +7,4 @@ res://Scenes/ui.tscn
 res://Scenes/brick.tscn
 res://Scripts/brick_spawner.gd
 res://Scripts/ball.gd
+res://Scripts/brick.gd
