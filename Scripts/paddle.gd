@@ -17,7 +17,12 @@ func _ready():
 	ball.life_lost.connect(on_ball_lost)
 	camera_rect = camera.get_viewport_rect()
 	half_paddle_width = collision_shape_2d.shape.get_rect().size.x / 2 * scale.x
-
+	set_use_custom_integrator(true)
+	
+func _integrate_forces(state):
+	var vel = state.get_linear_velocity()
+	state.set_linear_velocity(Vector2(0, vel.y))
+	
 func _physics_process(delta):
 	linear_velocity = speed * direction
 	position = Vector2(global_position.x, global_position.y)
@@ -31,7 +36,7 @@ func _process(delta):
 		global_position.x = camera_start_x + half_paddle_width
 	elif global_position.x + half_paddle_width > camera_end_x:
 		global_position.x = camera_end_x - half_paddle_width
-	
+		
 
 func _input(event):
 	if Input.is_action_pressed("left"):

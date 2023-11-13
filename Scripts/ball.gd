@@ -75,7 +75,7 @@ func ball_collision(collider):
 	else:
 		last_collider_id == collider.get_rid()
 		
-	new_velocity.y = sqrt(absf(velocity_xy* velocity_xy - new_velocity.x * new_velocity.x)) * (-1 if velocity.y > 0 else 1)
+	new_velocity.y = sqrt(absf(velocity_xy* velocity_xy - new_velocity.x * new_velocity.x * .5)) * (-1 if velocity.y > 0 else 1)
 	var speed_multiplier = speed_up_factor if collider is Paddle else 1
 	
 	velocity = (new_velocity * speed_multiplier).limit_length(VELOCTIY_LIMIT)
