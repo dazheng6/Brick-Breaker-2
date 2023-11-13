@@ -7,3 +7,5 @@ res://Scenes/ui.tscn
 res://Scenes/brick.tscn
 res://Scripts/ball.gd
 res://Scripts/paddle.gd
+res://Scripts/level_definitions.gd
+res://Scripts/brick_spawner.gd
