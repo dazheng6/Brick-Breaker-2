@@ -2,8 +2,17 @@ extends Node
 
 var current_level = 1
 
+var level_0 = [
+	[0,0,1,0,]
+]
+
 var level_1 = [
-	[0,0,1],
+	[5,5,5,5,5,5,5],
+	[5,0,0,0,0,0,5],
+	[5,0,5,5,5,0,5],
+	[5,0,5,0,5,0,5],
+	[5,0,0,0,5,0,5],
+	[5,5,5,5,5,0,5]
 ]
 
 var level_2 = [
@@ -14,7 +23,8 @@ var level_2 = [
 	[1,1,1,1,1,1,1,1]
 ]
 
-var levels = [level_1, level_2]
+
+var levels = [level_0, level_1, level_2]
 
 func get_current_level():
 	print(levels[current_level- 1])

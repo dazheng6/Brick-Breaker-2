@@ -54,7 +54,13 @@ func spawn_from_definitions(level_definition):
 	
 	if level_definition == LevelDefinitions.level_2:
 		spawn_position_x -= 154
-	
+		
+	if level_definition == LevelDefinitions.level_1:
+		spawn_position_x -= 100
+		
+	if level_definition == LevelDefinitions.level_0:
+		spawn_position_y += 400
+		
 	for i in rows:
 		for j in columns:
 			if level_definition[i][j] == 0:

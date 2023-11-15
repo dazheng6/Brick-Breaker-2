@@ -1,3 +1,5 @@
+AudioStreamPlayer2D
+AudioListener2D
 Marker2D
 Node
 CollisionShape2D
