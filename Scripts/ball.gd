@@ -30,12 +30,19 @@ func _physics_process(delta):
 	var collider = collision.get_collider()
 	if collider is Brick:
 		collider.decrease_level()
+		$BrickHit.play()
 		
 	if (collider is Brick or collider is Paddle):
 		ball_collision(collider)
 		print_debug()
 	else:
 		velocity = velocity.bounce(collision.get_normal())
+		
+	if (collider is Paddle):
+		$PaddleHit.play()
+		
+	if (collider is RigidBody2D):
+		$WallHit.play()
 
 func start_ball():
 	position = start_position
@@ -70,6 +77,7 @@ func ball_collision(collider):
 	var new_velocity = Vector2.ZERO
 	
 	new_velocity.x = velocity_xy + collision_x
+	
 	var collision_angle = deg_to_rad(randf_range(-45, 45))
 	
 	if collider.get_rid() == last_collider_id && collider is Brick:

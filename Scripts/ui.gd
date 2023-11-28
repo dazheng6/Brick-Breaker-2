@@ -14,7 +14,9 @@ func set_lifes(lifes: int):
 	lifes_label.text = "lifes: %d" % lifes
 
 func game_over():
-	$GameOverSong.play()
+	$GameOver.play()
+	#Dark Souls You Died SFX
+	$GameOVer2.play()
 	game_lost_container.show()
 	$GameBGM.stop()
 	

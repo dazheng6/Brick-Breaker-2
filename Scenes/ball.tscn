@@ -17,4 +17,8 @@ texture = ExtResource("1_le0hc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_o323d")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="BrickHit" type="AudioStreamPlayer2D" parent="."]
+
+[node name="PaddleHit" type="AudioStreamPlayer2D" parent="."]
+
+[node name="WallHit" type="AudioStreamPlayer2D" parent="."]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://ueua8tijq8sd"]
+[gd_scene load_steps=10 format=3 uid="uid://ueua8tijq8sd"]
 
 [ext_resource type="FontFile" uid="uid://b4pqfbvte11k6" path="res://Assets/VT323-Regular.ttf" id="1_bdgkw"]
 [ext_resource type="Script" path="res://Scripts/ui.gd" id="1_sx33i"]
 [ext_resource type="AudioStream" uid="uid://bdswjlssp6b3p" path="res://Audios/GameOver.ogg" id="3_ecvn8"]
 [ext_resource type="AudioStream" uid="uid://cngcvj2pnj0hh" path="res://Audios/LevelPassed.wav" id="4_dy27x"]
+[ext_resource type="AudioStream" uid="uid://b5cuerswxt47l" path="res://Audios/darksouls.wav" id="4_pe4i0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k68yp"]
 bg_color = Color(0.968627, 0.458824, 0.509804, 1)
@@ -112,11 +113,15 @@ text = "GO TO NEXT LEVEL"
 
 [node name="GameBGM" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamOggVorbis_qjh3c")
-volume_db = -7.474
+volume_db = -8.001
 
 [node name="GameOver" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ecvn8")
 volume_db = 5.306
+
+[node name="GameOVer2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_pe4i0")
+volume_db = 13.796
 
 [node name="LevelPassed" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_dy27x")
