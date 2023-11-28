@@ -1,2 +1,4 @@
 res://Scenes/ui.tscn
 res://Scripts/ui.gd
+res://Scenes/wall.tscn
+res://Scenes/wall.gd

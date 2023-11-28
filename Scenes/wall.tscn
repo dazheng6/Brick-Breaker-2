@@ -1,10 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://c4mkpq13dxiwv"]
+[gd_scene load_steps=3 format=3 uid="uid://c4mkpq13dxiwv"]
+
+[ext_resource type="Script" path="res://Scenes/wall.gd" id="1_ev67v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yblm"]
 size = Vector2(1235, 36)
 
 [node name="Wall" type="RigidBody2D"]
 freeze = true
+script = ExtResource("1_ev67v")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(591, -18)
