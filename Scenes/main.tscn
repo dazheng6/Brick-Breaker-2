@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c372sd6lqxu8j" path="res://Scenes/ball.tscn" id="2_60h1l"]
 [ext_resource type="PackedScene" uid="uid://c4mkpq13dxiwv" path="res://Scenes/wall.tscn" id="3_mc732"]
 [ext_resource type="PackedScene" uid="uid://c5wkdpvc8u4xs" path="res://Scenes/death_zone.tscn" id="4_al11a"]
-[ext_resource type="PackedScene" uid="uid://ueua8tijq8sd" path="res://Scenes/ui.tscn" id="5_5p4yv"]
+[ext_resource type="PackedScene" uid="uid://dng70pr86q7xy" path="res://Scenes/ui.tscn" id="5_5p4yv"]
 [ext_resource type="Script" path="res://Scripts/brick_spawner.gd" id="6_ipf6q"]
 [ext_resource type="PackedScene" uid="uid://cox6rik6cp7tm" path="res://Scenes/brick.tscn" id="7_v6yaw"]
 

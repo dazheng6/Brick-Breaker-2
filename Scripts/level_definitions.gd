@@ -7,12 +7,8 @@ var level_0 = [
 ]
 
 var level_1 = [
-	[5,5,5,5,5,5,5],
-	[5,0,0,0,0,0,5],
-	[5,0,5,5,5,0,5],
-	[5,0,5,0,5,0,5],
-	[5,0,0,0,5,0,5],
-	[5,5,5,5,5,0,5]
+	[1,1,1,1,1,1,1,1],
+	[1,2,3,4,4,3,2,1]
 ]
 
 var level_2 = [
@@ -23,9 +19,12 @@ var level_2 = [
 	[1,1,1,1,1,1,1,1]
 ]
 
-
 var levels = [level_0, level_1, level_2]
 
 func get_current_level():
 	print(levels[current_level- 1])
 	return levels[current_level- 1]
+	
+func restart():
+	print(levels[0])
+	return levels[0]

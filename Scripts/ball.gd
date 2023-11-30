@@ -89,4 +89,3 @@ func ball_collision(collider):
 	var speed_multiplier = speed_up_factor if collider is Paddle else 1
 	
 	velocity = (new_velocity * speed_multiplier).limit_length(VELOCTIY_LIMIT)
-

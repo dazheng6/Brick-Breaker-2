@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://b5cuerswxt47l"
-path="res://.godot/imported/darksouls.wav-c3b6a3aa00d9ec221a1c567c67e05488.sample"
+uid="uid://cngcvj2pnj0hh"
+path="res://.godot/imported/LevelPassed.wav-86022e28915eba26292388e74fb62464.sample"
 
 [deps]
 
-source_file="res://Audios/darksouls.wav"
-dest_files=["res://.godot/imported/darksouls.wav-c3b6a3aa00d9ec221a1c567c67e05488.sample"]
+source_file="res://Audio/LevelPassed.wav"
+dest_files=["res://.godot/imported/LevelPassed.wav-86022e28915eba26292388e74fb62464.sample"]
 
 [params]
 
