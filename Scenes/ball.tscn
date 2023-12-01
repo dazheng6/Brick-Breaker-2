@@ -1,10 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://c372sd6lqxu8j"]
+[gd_scene load_steps=6 format=3 uid="uid://c372sd6lqxu8j"]
 
 [ext_resource type="Script" path="res://Scripts/ball.gd" id="1_fryiu"]
 [ext_resource type="Texture2D" uid="uid://c8l7ke1ygg27h" path="res://Assets/Ball.png" id="1_le0hc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_o323d"]
 radius = 8.06226
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_etcia"]
+particle_flag_disable_z = true
+initial_velocity_min = 58.84
+initial_velocity_max = 58.84
+orbit_velocity_min = 436.91
+orbit_velocity_max = 827.82
+color = Color(0.992157, 1, 1, 1)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_khrot"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
 
 [node name="Ball" type="CharacterBody2D"]
 motion_mode = 1
@@ -22,3 +36,22 @@ shape = SubResource("CircleShape2D_o323d")
 [node name="PaddleHit" type="AudioStreamPlayer2D" parent="."]
 
 [node name="WallHit" type="AudioStreamPlayer2D" parent="."]
+
+[node name="BallParticke" type="GPUParticles2D" parent="."]
+scale = Vector2(0.1, 0.1)
+amount = 300
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_etcia")
+explosiveness = 0.02
+randomness = 0.81
+
+[node name="PaddleHitParticle" type="GPUParticles2D" parent="."]
+emitting = false
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_khrot")
+
+[node name="WallHitParticle" type="GPUParticles2D" parent="."]
+emitting = false
+
+[node name="BrickHitParticle" type="GPUParticles2D" parent="."]
+emitting = false

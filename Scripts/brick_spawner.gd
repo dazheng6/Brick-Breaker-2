@@ -82,4 +82,4 @@ func on_brick_destroyed():
 	if brick_count == 0:
 		ball.reset_ball()
 		ui.on_level_won()
-		
+		$"../GameWon".play()

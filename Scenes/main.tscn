@@ -51,3 +51,5 @@ margin = Vector2(80, 30)
 spawn_start = NodePath("../Marker2D")
 
 [node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="GameWon" type="AudioStreamPlayer2D" parent="."]

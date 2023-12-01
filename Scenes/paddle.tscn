@@ -17,3 +17,5 @@ texture = ExtResource("1_nvb1k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_aectb")
+
+[node name="OnBallLost" type="AudioStreamPlayer2D" parent="."]
