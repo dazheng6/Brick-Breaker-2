@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c83q4xmcgns8q"
+path="res://.godot/imported/478675__joao_janz__metal-pipe-hit-1_3 (mp3cut.net).mp3-e790381ca74eb718fba053ca2526ff62.mp3str"
+
+[deps]
+
+source_file="res://Audio/478675__joao_janz__metal-pipe-hit-1_3 (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/478675__joao_janz__metal-pipe-hit-1_3 (mp3cut.net).mp3-e790381ca74eb718fba053ca2526ff62.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

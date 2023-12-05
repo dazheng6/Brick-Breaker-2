@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dntwvgr8jfhki"]
+[gd_scene load_steps=9 format=3 uid="uid://dntwvgr8jfhki"]
 
 [ext_resource type="PackedScene" uid="uid://1xkdkgdhagkc" path="res://Scenes/paddle.tscn" id="1_lwlrn"]
 [ext_resource type="PackedScene" uid="uid://c372sd6lqxu8j" path="res://Scenes/ball.tscn" id="2_60h1l"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dng70pr86q7xy" path="res://Scenes/ui.tscn" id="5_5p4yv"]
 [ext_resource type="Script" path="res://Scripts/brick_spawner.gd" id="6_ipf6q"]
 [ext_resource type="PackedScene" uid="uid://cox6rik6cp7tm" path="res://Scenes/brick.tscn" id="7_v6yaw"]
+[ext_resource type="AudioStream" uid="uid://deeey5vrahse8" path="res://Audio/274182__littlerobotsoundfactory__jingle_win_synth_05.wav" id="8_ihf01"]
 
 [node name="main" type="Node"]
 
@@ -28,15 +29,15 @@ ui = NodePath("../UI")
 
 [node name="Walls" type="Node" parent="."]
 
-[node name="UpperWall" parent="Walls" instance=ExtResource("3_mc732")]
+[node name="UpperWall" parent="Walls" groups=["Wall"] instance=ExtResource("3_mc732")]
 collision_layer = 4
 
-[node name="RightWall" parent="Walls" instance=ExtResource("3_mc732")]
+[node name="RightWall" parent="Walls" groups=["Wall"] instance=ExtResource("3_mc732")]
 position = Vector2(1152, -407)
 rotation = 1.5708
 collision_layer = 4
 
-[node name="Leftwall" parent="Walls" instance=ExtResource("3_mc732")]
+[node name="Leftwall" parent="Walls" groups=["Wall"] instance=ExtResource("3_mc732")]
 position = Vector2(-33, -448)
 rotation = 1.5708
 collision_layer = 4
@@ -53,3 +54,5 @@ spawn_start = NodePath("../Marker2D")
 [node name="Marker2D" type="Marker2D" parent="."]
 
 [node name="GameWon" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_ihf01")
+panning_strength = 0.0

@@ -28,7 +28,7 @@ func _physics_process(delta):
 		return
 		
 	var collider = collision.get_collider()
-	if collider is Brick:
+	if collider.is_in_group("Brick"):
 		collider.decrease_level()
 		$BrickHit.play()
 		
@@ -38,10 +38,10 @@ func _physics_process(delta):
 	else:
 		velocity = velocity.bounce(collision.get_normal())
 		
-	if (collider is Paddle):
+	if collider.is_in_group("Paddle"):
 		$PaddleHit.play()
 		
-	if (collider is RigidBody2D):
+	if collider.is_in_group("Wall"):
 		$WallHit.play()
 
 func start_ball():

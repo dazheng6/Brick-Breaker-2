@@ -1,12 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://1xkdkgdhagkc"]
+[gd_scene load_steps=8 format=3 uid="uid://1xkdkgdhagkc"]
 
 [ext_resource type="Texture2D" uid="uid://ckbmlemetbql1" path="res://Assets/Paddle.png" id="1_nvb1k"]
 [ext_resource type="Script" path="res://Scripts/paddle.gd" id="1_u6t1d"]
+[ext_resource type="AudioStream" uid="uid://dj6pypdjoxegt" path="res://Audio/448753__matrixxx__sad-ghost-02.wav" id="3_qvshj"]
+
+[sub_resource type="Curve" id="Curve_sc51u"]
+max_value = 8.0
+_data = [Vector2(0, 8), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_qv85j"]
+curve = SubResource("Curve_sc51u")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6x67o"]
+particle_flag_disable_z = true
+direction = Vector3(-1, 0, 0)
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = -10.69
+linear_accel_max = 19.85
+angle_min = -720.0
+angle_max = 720.0
+scale_min = 4.0
+scale_max = 4.0
+scale_curve = SubResource("CurveTexture_qv85j")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aectb"]
 size = Vector2(124, 16)
 
-[node name="Paddle" type="RigidBody2D"]
+[node name="Paddle" type="RigidBody2D" groups=["Paddle"]]
 gravity_scale = 0.0
 lock_rotation = true
 script = ExtResource("1_u6t1d")
@@ -15,7 +40,33 @@ script = ExtResource("1_u6t1d")
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("1_nvb1k")
 
+[node name="Particles2D2" type="GPUParticles2D" parent="Sprite2D"]
+show_behind_parent = true
+position = Vector2(-220, 0)
+scale = Vector2(2.56, 2.56)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_6x67o")
+speed_scale = 2.0
+explosiveness = 0.02
+randomness = 0.81
+trail_enabled = true
+trail_lifetime = 2.15
+
+[node name="Particles2D" type="GPUParticles2D" parent="Sprite2D"]
+show_behind_parent = true
+position = Vector2(220, 0)
+scale = Vector2(1.6, 1.6)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_6x67o")
+speed_scale = 2.0
+explosiveness = 0.02
+randomness = 0.81
+trail_enabled = true
+trail_lifetime = 2.15
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_aectb")
 
 [node name="OnBallLost" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_qvshj")
+panning_strength = 0.0

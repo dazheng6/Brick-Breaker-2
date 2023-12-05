@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c2lw0ft4aeup8"
+path="res://.godot/imported/634135__erbsland-music__thump-putting-metal-bowl-on-soft-surface (mp3cut.net).mp3-1cef5231ba55ee495c27851f8e73c466.mp3str"
+
+[deps]
+
+source_file="res://Audio/634135__erbsland-music__thump-putting-metal-bowl-on-soft-surface (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/634135__erbsland-music__thump-putting-metal-bowl-on-soft-surface (mp3cut.net).mp3-1cef5231ba55ee495c27851f8e73c466.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
