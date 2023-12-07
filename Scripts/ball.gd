@@ -11,7 +11,7 @@ const VELOCTIY_LIMIT = 40
 @export var lifes = 3
 @export var death_zone: DeathZone
 @export var ui: UI
-@export var level = 0
+@export var level = 1
 
 var speed_up_factor = 1.05
 var start_position: Vector2

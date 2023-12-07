@@ -70,7 +70,14 @@ layout_mode = 2
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("1_bdgkw")
 theme_override_font_sizes/font_size = 30
-text = "Level: 3"
+text = "Level:"
+
+[node name="LevelInt" type="Label" parent="LevelContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_bdgkw")
+theme_override_font_sizes/font_size = 30
 
 [node name="GameLostContainer" type="CenterContainer" parent="."]
 anchors_preset = 15
