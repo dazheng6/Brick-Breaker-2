@@ -1,9 +1,10 @@
+CollisionShape2D
+Area2D
 GPUParticles2D
 AudioStreamPlayer2D
 AudioListener2D
 Marker2D
 Node
-CollisionShape2D
 Sprite2D
 RigidBody2D
 Button
@@ -14,6 +15,5 @@ Panel
 CenterContainer
 MarginContainer
 CanvasLayer
-Area2D
 CharacterBody2D
 Camera2D

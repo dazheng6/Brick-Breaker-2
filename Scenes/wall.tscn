@@ -1,19 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://c4mkpq13dxiwv"]
+[gd_scene load_steps=4 format=3 uid="uid://c4mkpq13dxiwv"]
 
-[sub_resource type="GDScript" id="GDScript_c1ndx"]
-script/source = "extends RigidBody2D
-
-class_name Wall
-
-"
+[ext_resource type="Script" path="res://wall.gd" id="1_nqvrf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yblm"]
 size = Vector2(1235, 36)
 
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lrxu4"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = 7.63
+initial_velocity_max = 25.88
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_min = -720.0
+angle_max = 720.0
+scale_min = 54.44
+scale_max = 54.44
+
 [node name="Wall" type="RigidBody2D"]
 freeze = true
-script = SubResource("GDScript_c1ndx")
+script = ExtResource("1_nqvrf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(591, -18)
 shape = SubResource("RectangleShape2D_0yblm")
+
+[node name="WallHitParticle" type="GPUParticles2D" parent="."]
+show_behind_parent = true
+emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_lrxu4")
+lifetime = 0.1
+one_shot = true
+explosiveness = 0.47
+randomness = 0.06
+trail_enabled = true

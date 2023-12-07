@@ -48,6 +48,30 @@ theme_override_fonts/font = ExtResource("1_bdgkw")
 theme_override_font_sizes/font_size = 30
 text = "Lifes: 3"
 
+[node name="LevelContainer" type="MarginContainer" parent="."]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 1136.0
+offset_bottom = 632.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="LevelContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="LevelsLabel" type="Label" parent="LevelContainer/HBoxContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("1_bdgkw")
+theme_override_font_sizes/font_size = 30
+text = "Level: 3"
+
 [node name="GameLostContainer" type="CenterContainer" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
@@ -113,7 +137,7 @@ text = "GO TO NEXT LEVEL"
 
 [node name="GameBGM" type="AudioStreamPlayer2D" parent="."]
 stream = SubResource("AudioStreamOggVorbis_qol0i")
-volume_db = -1.363
+volume_db = -8.986
 panning_strength = 0.0
 
 [node name="GameOver" type="AudioStreamPlayer2D" parent="."]

@@ -42,7 +42,7 @@ texture = ExtResource("1_nvb1k")
 
 [node name="Particles2D2" type="GPUParticles2D" parent="Sprite2D"]
 show_behind_parent = true
-position = Vector2(-220, 0)
+position = Vector2(-185, 20)
 scale = Vector2(2.56, 2.56)
 amount = 50
 process_material = SubResource("ParticleProcessMaterial_6x67o")
@@ -54,7 +54,7 @@ trail_lifetime = 2.15
 
 [node name="Particles2D" type="GPUParticles2D" parent="Sprite2D"]
 show_behind_parent = true
-position = Vector2(220, 0)
+position = Vector2(185, 20)
 scale = Vector2(1.6, 1.6)
 amount = 50
 process_material = SubResource("ParticleProcessMaterial_6x67o")

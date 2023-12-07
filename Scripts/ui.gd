@@ -3,12 +3,15 @@ extends CanvasLayer
 class_name UI
 
 @onready var lifes_label = $MarginContainer/HBoxContainer/LifesLabel
-
+@onready var levels_label = $LevelContainer/HBoxContainer/LevelsLabel
 @onready var game_lost_container = $GameLostContainer
-	
+
 func _ready():
 	$GameLostContainer.hide()
 	$GameBGM.play()
+	
+func set_level (level: int):
+	levels_label.text = "Level: %d" % level
 	
 func set_lifes(lifes: int):
 	lifes_label.text = "lifes: %d" % lifes

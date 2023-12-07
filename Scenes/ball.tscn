@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://c372sd6lqxu8j"]
+[gd_scene load_steps=16 format=3 uid="uid://c372sd6lqxu8j"]
 
 [ext_resource type="Script" path="res://Scripts/ball.gd" id="1_fryiu"]
 [ext_resource type="Texture2D" uid="uid://c8l7ke1ygg27h" path="res://Assets/Ball.png" id="1_le0hc"]
 [ext_resource type="AudioStream" uid="uid://c2lw0ft4aeup8" path="res://Audio/634135__erbsland-music__thump-putting-metal-bowl-on-soft-surface (mp3cut.net).mp3" id="3_64sad"]
 [ext_resource type="AudioStream" uid="uid://cg2ee6fhbqwal" path="res://Audio/487357__rvgerxini__soft-hit.mp3" id="3_ekcxl"]
 [ext_resource type="AudioStream" uid="uid://c83q4xmcgns8q" path="res://Audio/478675__joao_janz__metal-pipe-hit-1_3 (mp3cut.net).mp3" id="5_hb2k7"]
+[ext_resource type="Texture2D" uid="uid://d36go6xkllnuk" path="res://Textures/Screenshot 2023-12-04 194439 - Copy.png" id="6_g5kyb"]
 
 [sub_resource type="Curve" id="Curve_h8htm"]
 max_value = 8.0
@@ -35,13 +36,64 @@ scale_curve = SubResource("CurveTexture_o6koh")
 [sub_resource type="CircleShape2D" id="CircleShape2D_o323d"]
 radius = 8.06226
 
+[sub_resource type="Curve" id="Curve_63jld"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.995816, 0.0947368), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_0b1g5"]
+curve = SubResource("Curve_63jld")
+
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_khrot"]
+emission_shape = 4
+emission_point_count = 1
 particle_flag_disable_z = true
+spread = 180.0
 gravity = Vector3(0, 98, 0)
+initial_velocity_min = 91.6
+initial_velocity_max = 91.6
+angular_velocity_min = 197.86
+angular_velocity_max = 197.86
 orbit_velocity_min = 0.0
 orbit_velocity_max = 0.0
+linear_accel_min = 18.32
+linear_accel_max = 18.32
+scale_min = 0.4
+scale_max = 0.4
+scale_curve = SubResource("CurveTexture_0b1g5")
 
-[node name="Ball" type="CharacterBody2D"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_8pgou"]
+emission_shape = 4
+emission_point_count = 1
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_min = 488.55
+initial_velocity_max = 488.55
+angular_velocity_min = 197.86
+angular_velocity_max = 197.86
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+linear_accel_min = 18.32
+linear_accel_max = 18.32
+scale_min = 4.0
+scale_max = 4.0
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1laep"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+particle_flag_disable_z = true
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+orbit_velocity_min = 152.67
+orbit_velocity_max = 152.67
+angle_min = -720.0
+angle_max = 720.0
+scale_min = 40.0
+scale_max = 40.0
+
+[node name="Ball" type="CharacterBody2D" groups=["Ball"]]
 motion_mode = 1
 script = ExtResource("1_fryiu")
 
@@ -65,7 +117,7 @@ shape = SubResource("CircleShape2D_o323d")
 
 [node name="BrickHit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_ekcxl")
-volume_db = 4.898
+volume_db = -3.591
 panning_strength = 0.0
 
 [node name="PaddleHit" type="AudioStreamPlayer2D" parent="."]
@@ -75,16 +127,37 @@ panning_strength = 0.0
 
 [node name="WallHit" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_hb2k7")
-volume_db = 9.196
+volume_db = 10.019
 panning_strength = 0.0
 
 [node name="PaddleHitParticle" type="GPUParticles2D" parent="."]
 emitting = false
+amount = 1
 sub_emitter = NodePath(".")
 process_material = SubResource("ParticleProcessMaterial_khrot")
-
-[node name="WallHitParticle" type="GPUParticles2D" parent="."]
-emitting = false
+texture = ExtResource("6_g5kyb")
+lifetime = 0.1
+one_shot = true
 
 [node name="BrickHitParticle" type="GPUParticles2D" parent="."]
 emitting = false
+amount = 200
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_8pgou")
+lifetime = 0.15
+one_shot = true
+explosiveness = 0.74
+randomness = 0.58
+fixed_fps = 60
+local_coords = true
+
+[node name="WallHitParticle" type="GPUParticles2D" parent="."]
+scale = Vector2(5, 5)
+emitting = false
+amount = 200
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_1laep")
+lifetime = 0.07
+one_shot = true
+explosiveness = 0.3
+randomness = 0.45

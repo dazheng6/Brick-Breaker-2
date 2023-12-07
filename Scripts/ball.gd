@@ -3,6 +3,7 @@ extends CharacterBody2D
 class_name Bal
 
 signal life_lost
+signal level_won
 
 const VELOCTIY_LIMIT = 40
 
@@ -10,6 +11,7 @@ const VELOCTIY_LIMIT = 40
 @export var lifes = 3
 @export var death_zone: DeathZone
 @export var ui: UI
+@export var level = 0
 
 var speed_up_factor = 1.05
 var start_position: Vector2
@@ -19,6 +21,7 @@ var last_collider_id
 
 func _ready():
 	ui.set_lifes(lifes)
+	ui.set_level(level)
 	start_position = position
 	death_zone.life_lost.connect(on_life_lost)
 
@@ -30,20 +33,20 @@ func _physics_process(delta):
 	var collider = collision.get_collider()
 	if collider.is_in_group("Brick"):
 		collider.decrease_level()
-		$BrickHit.play()
-		
-	if (collider is Brick or collider is Paddle):
 		ball_collision(collider)
-		print_debug()
+		$BrickHitParticle.emitting = true
+		$BrickHit.play()
 	else:
 		velocity = velocity.bounce(collision.get_normal())
 		
 	if collider.is_in_group("Paddle"):
 		$PaddleHit.play()
+		$PaddleHitParticle.emitting = true
 		
 	if collider.is_in_group("Wall"):
 		$WallHit.play()
-
+		$WallHitParticle.emitting = true
+		
 func start_ball():
 	position = start_position
 	randomize()

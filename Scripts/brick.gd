@@ -45,3 +45,6 @@ func destroy():
 	
 func get_width():
 	return get_size().x
+
+func _on_area_2d_area_entered(area):
+	$BrickHitParticle.emitting = true
